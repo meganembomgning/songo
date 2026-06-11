@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rapport – Megane</title>
+  <style>
+    :root {
+      --rose: #e91e8c;
+      --violet: #7b1fa2;
+      --or: #ffd700;
+      --or-clair: #fff9c4;
+      --blanc: #f8f9fa;
+      --gris: #e0e0e0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1a0033, #3d0066);
+      color: var(--blanc);
+      padding: 2rem;
+    }
+    .rapport-header {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--violet), #4a0030);
+      border-radius: 20px;
+      border: 2px solid var(--rose);
+      margin-bottom: 2rem;
+    }
+    .rapport-header h1 { font-size: 2rem; color: var(--or); margin-bottom: 0.5rem; }
+    .rapport-header p { color: var(--gris); }
+    .card {
+      background: rgba(0,0,0,0.4);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      border-left: 5px solid var(--rose);
+    }
+    .card h2 {
+      color: var(--rose);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(233,30,140,0.3);
+    }
+    .card h3 { color: var(--or); margin: 1rem 0 0.5rem; }
+    .card p { color: var(--gris); line-height: 1.7; margin-bottom: 0.8rem; }
+    .card ul { list-style: none; margin-bottom: 1rem; }
+    .card ul li {
+      padding: 0.3rem 0 0.3rem 1.8rem;
+      position: relative;
+      color: var(--gris);
+      line-height: 1.6;
+    }
+    .card ul li::before { content: "🌸"; position: absolute; left: 0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+    th, td {
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: var(--gris);
+      font-size: 0.9rem;
+    }
+    th { color: var(--or); font-weight: 600; }
+    td:first-child { color: var(--or-clair); font-weight: 500; width: 40%; }
+    pre {
+      background: rgba(0,0,0,0.5);
+      border-radius: 10px;
+      padding: 1rem;
+      color: #a8ff78;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      border: 1px solid rgba(233,30,140,0.2);
+      margin: 0.5rem 0;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rapport-header">
+    <h1>Rapport de Projet</h1>
+    <p>Jeu de Songo – Version Locale | HTML, CSS, JavaScript</p>
+  </div>
+
+  <div class="card">
+    <h2>Informations de l'étudiante</h2>
+    <table>
+      <tr><td>Nom complet</td><td>MBOMGNING LEMOFOUET MEGANE</td></tr>
+      <tr><td>Email</td><td>megane.mbomgning@gmail.com</td></tr>
+      <tr><td>GitHub</td><td>meganembomgning</td></tr>
+      <tr><td>Branche Git</td><td>version-megane</td></tr>
+      <tr><td>Dépôt GitHub</td><td>meganembomgning/songo</td></tr>
+      <tr><td>Version</td><td>Locale – 2 joueurs sur la même machine</td></tr>
+      <tr><td>Technologies</td><td>HTML5, CSS3, JavaScript</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🎮 Fonctionnement du jeu</h2>
+    <p>Le <strong>Songo</strong> est un jeu de stratégie africain de la famille des jeux de semailles (Mancala), originaire du peuple Ekang (Cameroun, Gabon, Guinée Équatoriale). Il se joue à deux joueurs sur un plateau de 14 cases.</p>
+    <h3>Mise en place</h3>
+    <ul>
+      <li>Le plateau comprend 14 cases réparties en 2 rangées de 7</li>
+      <li>Chaque joueur possède 7 cases constituant son camp</li>
+      <li>Au départ : 5 graines par case = 35 graines par joueur = 70 au total</li>
+    </ul>
+    <h3>Déroulement d'un tour</h3>
+    <ul>
+      <li>Le joueur choisit une case non vide de son camp</li>
+      <li>Il ramasse toutes les graines de cette case</li>
+      <li>Il les distribue une par une : droite→gauche dans son camp, puis gauche→droite chez l'adversaire</li>
+      <li>Si la case de départ est atteinte lors de la distribution, on la saute</li>
+    </ul>
+    <h3>Captures</h3>
+    <ul>
+      <li>Une capture a lieu si la dernière graine tombe dans une case adverse contenant 1, 2 ou 3 graines</li>
+      <li>La case la plus à gauche du camp adverse est protégée (non capturable)</li>
+      <li>Si la case précédente remplit aussi la condition, elle est aussi capturée (capture en chaîne)</li>
+    </ul>
+    <h3>Victoire</h3>
+    <ul>
+      <li>Gagner = capturer 40 graines ou plus</li>
+      <li>Si un joueur ne peut plus jouer, la partie s'arrête</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Principe du jeu</h2>
+    <p>Le Songo repose sur un principe de <strong>distribution circulaire</strong> des graines avec <strong>capture conditionnelle</strong>.</p>
+    <h3>Sens de distribution</h3>
+    <pre>
+JOUEUR 2  : [C13][C12][C11][C10][C9][C8][C7]
+              ←←←←←←←←←←←←←←←←←←←←←←←
+              →→→→→→→→→→→→→→→→→→→→→→→
+JOUEUR 1  : [C0] [C1] [C2] [C3] [C4][C5][C6]
+
+Joueur 1 : C6→C5→C4→C3→C2→C1→C0→C7→C8→C9→C10→C11→C12→C13→C6...
+Joueur 2 : C7→C8→C9→C10→C11→C12→C13→C0→C1→C2→C3→C4→C5→C6→C13...</pre>
+    <h3>Stratégie</h3>
+    <ul>
+      <li>Planifier pour terminer dans une case adverse capturable (1 à 3 graines)</li>
+      <li>Protéger ses cases en évitant d'avoir 1, 2 ou 3 graines</li>
+      <li>Créer des captures en chaîne pour maximiser les gains</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Algorithme</h2>
+    <h3>1. Algorithme de distribution</h3>
+    <pre>
+FONCTION distribuer(caseChoisie):
+  graines ← plateau[caseChoisie]
+  plateau[caseChoisie] ← 0
+  position ← caseChoisie
+  TANT QUE graines > 0 FAIRE:
+    position ← prochaineCase(position, joueurActuel)
+    SI position ≠ caseChoisie ALORS:
+      plateau[position] ← plateau[position] + 1
+      graines ← graines - 1
+  FIN TANT QUE
+  RETOURNER position</pre>
+
+    <h3>2. Algorithme de prochaine case</h3>
+    <pre>
+FONCTION prochaineCase(position, joueur):
+  SI joueur = 1 ALORS:
+    SI position > 0 ET ≤ 6 → RETOURNER position - 1
+    SI position = 0        → RETOURNER 7
+    SI position ≥ 7 ET < 13 → RETOURNER position + 1
+    SI position = 13       → RETOURNER 6
+  SI joueur = 2 ALORS:
+    SI position > 7 ET ≤ 13 → RETOURNER position - 1
+    SI position = 7         → RETOURNER 0
+    SI position ≥ 0 ET < 6  → RETOURNER position + 1
+    SI position = 6         → RETOURNER 13</pre>
+
+    <h3>3. Algorithme de capture</h3>
+    <pre>
+FONCTION capturer(dernièreCase):
+  SI dernièreCase est dans le camp adverse ALORS:
+    SI dernièreCase ≠ caseProtégée ALORS:
+      TANT QUE plateau[dernièreCase] ∈ {2,3,4} FAIRE:
+        scores[joueurActuel] += plateau[dernièreCase]
+        plateau[dernièreCase] ← 0
+        dernièreCase ← casePrécédenteAdverse(dernièreCase)
+      FIN TANT QUE</pre>
+
+    <h3>4. Algorithme de fin de partie</h3>
+    <pre>
+FONCTION verifierFin():
+  SI scores[joueur1] ≥ 40 → "Joueur 1 gagne !"
+  SI scores[joueur2] ≥ 40 → "Joueur 2 gagne !"
+  SI aucune case non vide pour joueurActuel:
+    → "Partie bloquée – fin de partie"
+  RETOURNER false</pre>
+  </div>
+
+  <div class="card">
+    <h2>Organisation du code</h2>
+    <h3>Structure des fichiers</h3>
+    <pre>
+version_locale/
+├── index.html    → Structure HTML, plateau de jeu, navigation
+├── style.css     → Design violet/rose, animations, responsive
+├── script.js     → Logique complète du jeu Songo
+└── rapport.html  → Ce rapport</pre>
+
+    <h3>Fonctions principales</h3>
+    <table>
+      <tr><th>Fonction</th><th>Description</th></tr>
+      <tr><td>initJeu()</td><td>Initialise le plateau avec 5 graines par case</td></tr>
+      <tr><td>afficherPlateau()</td><td>Génère dynamiquement les cases HTML</td></tr>
+      <tr><td>jouerCoup(index)</td><td>Gère un tour complet</td></tr>
+      <tr><td>distribuer(index)</td><td>Distribue les graines circulairement</td></tr>
+      <tr><td>prochaineCase(pos, joueur)</td><td>Calcule la prochaine case</td></tr>
+      <tr><td>capturer(dernierCase)</td><td>Vérifie et effectue les captures</td></tr>
+      <tr><td>verifierFin()</td><td>Détecte la fin de partie</td></tr>
+      <tr><td>changerTour()</td><td>Alterne entre les deux joueurs</td></tr>
+      <tr><td>showSection(id)</td><td>Navigation Jeu/Rapport</td></tr>
+    </table>
+
+    <h3>Workflow Git</h3>
+    <pre>
+git clone https://github.com/meganembomgning/songo.git songo-megane
+git checkout -b version-megane
+git add .
+git commit -m "Version locale du jeu Songo"
+git push origin version-megane</pre>
+  </div>
+
+  <div class="footer">
+    © 2026 MBOMGNING LEMOFOUET MEGANE — Projet Web — Jeu de Songo
+  </div>
+
+</body>
+</html>
