@@ -13,7 +13,7 @@ function initJeu() {
   afficherPlateau();
   afficherScores();
   setMessage("Cliquez sur une case pour jouer !");
-  document.getElementById('tourIndicator').textContent = "🎯 Tour du Joueur 1";
+  document.getElementById('tourIndicator').textContent = "Tour du Joueur 1";
 }
 
 // ========== AFFICHAGE DU PLATEAU ==========
@@ -130,7 +130,7 @@ function caseAdverse(pos, joueur) {
 // ========== CHANGER DE TOUR ==========
 function changerTour() {
   joueurActuel = joueurActuel === 1 ? 2 : 1;
-  document.getElementById('tourIndicator').textContent = `🎯 Tour du Joueur ${joueurActuel}`;
+  document.getElementById('tourIndicator').textContent = `Tour du Joueur ${joueurActuel}`;
   setMessage(`C'est au tour du Joueur ${joueurActuel} !`);
 }
 
